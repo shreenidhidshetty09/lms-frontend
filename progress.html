@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Progress</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f4f4f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      margin-top: 30px;
+      color: #0d47a1;
+    }
+
+    
+    .progress-container {
+      width: 80%;
+      background: #ddd;
+      margin: 20px auto;
+      border-radius: 25px;
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+      overflow: hidden;
+    }
+
+    
+    .progress-bar {
+      width: 0%;
+      height: 30px;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+      line-height: 30px;
+      border-radius: 25px;
+      transition: width 0.6s ease-in-out;
+    }
+
+    
+    #python-bar { background: #4caf50; }       
+    #html-bar { background: #f44336; }        
+    #css-bar { background: #2196f3; }         
+    #js-bar { background: #ff9800; }          
+    #sql-bar { background: #9c27b0; }        
+
+    button {
+      padding: 12px 25px;
+      margin-top: 20px;
+      font-size: 16px;
+      font-weight: bold;
+      background: #2196f3;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #0d47a1;
+    }
+    .python{
+        color:green;
+        font-family:Arial, Helvetica, sans-serif;
+        font-weight:bold;
+    }
+    .python{
+        color:green;
+        font-family:Arial, Helvetica, sans-serif;
+        font-weight: bold;
+    }
+    .css{
+        color:#2196f3;
+        font-family:Arial, Helvetica, sans-serif;
+        font-weight:bold;
+    }
+    .html{
+        color:#f44336;
+        font-family:Arial, Helvetica, sans-serif;
+        font-weight:bold;
+    }
+    .sql{
+        color:#9c27b0;
+        font-family:Arial, Helvetica, sans-serif;
+        font-weight: bold;
+    }
+    .javascript{
+        color:#ff9800;
+        font-family:Arial, Helvetica, sans-serif;
+        font-weight:bold;
+    }
+    a{
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1> Progress Tracker</h1>
+
+  
+  <h3 class="python">Python</h3>
+  <div class="progress-container">
+    <div id="python-bar" class="progress-bar">0%</div>
+  </div>
+
+
+  <h3 class="html">HTML</h3>
+  <div class="progress-container">
+    <div id="html-bar" class="progress-bar">0%</div>
+  </div>
+
+  
+  <h3 class="css">CSS</h3>
+  <div class="progress-container">
+    <div id="css-bar" class="progress-bar">0%</div>
+  </div>
+
+  
+  <h3 class="javascript">JavaScript</h3>
+  <div class="progress-container">
+    <div id="js-bar" class="progress-bar">0%</div>
+  </div>
+
+  
+  <h3 class="sql">SQL</h3>
+  <div class="progress-container">
+    <div id="sql-bar" class="progress-bar">0%</div>
+  </div>
+
+  
+  <button onclick="startQuiz()"><a href="quiz.html"> Start Quiz</a></button>
+
+   <script>
+  window.onload = function() {
+    ["python","html","css","js","sql"].forEach(updateProgressBar);
+  };
+
+  function updateProgressBar(subject) {
+    let progress = sessionStorage.getItem(subject + "Progress") || 0;
+    const bar = document.getElementById(subject + "-bar");
+    bar.style.width = progress + "%";
+    bar.textContent = progress + "%";
+  }
+
+  function resetProgress() {
+    ["python","html","css","js","sql"].forEach(sub => {
+      sessionStorage.setItem(sub + "Progress", 0);
+      updateProgressBar(sub);
+    });
+  }
+</script>

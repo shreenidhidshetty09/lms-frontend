@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lesson Player UI</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+
+.sidebar {
+  width: 250px;
+  background: #1f2933;
+  color: white;
+  padding: 20px;
+}
+
+.lesson-list {
+  list-style: none;
+  padding: 0;
+}
+
+.lesson-list li {
+  padding: 10px;
+  background: mediumturquoise;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 20px;
+}
+
+
+.video-box {
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+video {
+  width: 100%;
+  border-radius: 5px;
+}
+h2{
+  color: #0d47a1;
+}
+a{
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  
+  <div class="sidebar">
+    <h3>Lesson Player UI</h3>
+    <ul class="lesson-list">
+      <li>JavaScript</li>
+    </ul>
+  </div>
+
+
+  <div class="content">
+    <h2>JavaScript Video Lessons</h2>
+
+    <div class="video-grid">
+
+      <div class="video-box">
+        <h3>Javascript Introduction</h3>
+        <video controls>
+          <source src="c:\Users\Shreenidhi D Shetty\Downloads\videoplayback (16).mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="video-box">
+        <h3>Javascript Variables</h3>
+        <video controls>
+          <source src="c:\Users\Shreenidhi D Shetty\Downloads\videoplayback (17).mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="video-box">
+        <h3> Javascript Arithmetic Operators</h3>
+        <video controls>
+          <source src="c:\Users\Shreenidhi D Shetty\Downloads\videoplayback (18).mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="video-box">
+        <h3> Javascript Advantages & Disadvantages</h3>
+        <video controls>
+          <source src="c:\Users\Shreenidhi D Shetty\Downloads\videoplayback (19).mp4"type="video/mp4">
+        </video>
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+<script>
+document.querySelectorAll("video").forEach(video => {
+    video.addEventListener("play", () => {
+      sessionStorage.setItem("js", "present");
+    });
+  });
+  </script>
+</body>
+</html>

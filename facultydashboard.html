@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body{
+        background-color: white;
+        display: flex;
+    }
+    .container{
+        background-color: white;
+        color: blue;
+
+    }
+    .sidebar{
+        width: 100px;
+        position: fixed;
+        background-color: rgb(226, 232, 237);
+        color: rgb(6, 24, 220);
+        padding:30px;
+    }
+    .sidebar h2{
+        margin-top: 0%;
+    }
+    h2{
+        color: rgb(118, 125, 127);
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    ul,li{
+        color: blue;
+        padding-left: 10%;
+    }
+    .main {
+      margin-left: 220px; /* space for sidebar */
+      padding: 20px;
+      flex: 1;
+    }
+
+    .header {
+      font-size: 24px;
+      font-weight: bold;
+      color: #178ff8;
+      margin-bottom: 10px;
+    }
+
+    .subheader {
+      background-color: #178ff8;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    .stats {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 500px;
+    }
+    .stat-box {
+      background-color: white;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      flex: 1;
+      text-align: center;
+      font-weight: bold;
+      color: #178ff8;
+    }
+    .announcement{
+        text-align: right;
+    }
+
+
+
+  </style>
+  </head>
+  <body>
+    
+    <div class="container">
+        <div class="sidebar">
+    
+    <h2>Marks Calender</h2>
+    <p>Administrator</p>
+    <ul>
+        <li>Faculty Portal</li>
+        <li>Add Students</li>
+        <li>Add Password</li>
+        <li>Manage Sections</li>
+        <li>Manage Subjects</li>
+        <li>Manage Strands</li>
+        <li>Manage Teachers</li>
+        <li>Inactive Students</li>
+    </ul>
+    <p>Personal Settings</p>
+    <ul>
+        <li>Account Settings</li>
+    </ul>
+    </div>
+    
+    <div class="main">
+        
+        <div class="header">Faculty Portal</div>
+        <div class="subheader">Hello Mark S Calender</div>
+    <div class="stats">
+        <div class="stat-box">7 students</div>
+        <div class="stat-box">2 teachers</div>
+        <div class="stat-box">1 Faculty</div>
+        <div class="stat-box">10 Total</div>
+    </div>
+    <div class="announcement">
+        <div class="main">
+            <div class="header">Announcement</div>
+            <p>We will be having urgent meeting at 3pm</p>
+            <p><h4>Mark Calender 2023</h4></p>
+        </div>
+    </div>
+  </body>
+  
+</head>
+</html>
